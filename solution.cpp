@@ -1,5 +1,7 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
+#include <string>
 #include <algorithm>
 using namespace std;
 
@@ -12,7 +14,7 @@ int main(){
 		
 		char option {};
 		cout << "\nP - Print numbers \nA - Add a number \nM - Display mean of the numbers"
-			 << "\nS - Display the smallest number \nL - Display the largest number \nQ - Quit" << endl;
+			 << "\nS - Display the smallest number \nL - Display the largest number \nC - Clear list \nQ - Quit" << endl;
 		cout << "\nEnter your choice: ";
 		cin >> option;
 		if (option == 'p' || option == 'P')
@@ -76,6 +78,18 @@ int main(){
 			// if vector is empty
 			else
 				cout << "\nUnable to calculate - not enough data.\n" << endl;
+		}
+		else if (option == 'c' || option == 'C')
+		{
+			// checking if vector is empty
+			if (vec.size() != 0)
+			{
+				vec.clear();
+				cout << "\nList is cleared!" << endl;
+			}
+			// if vector is empty
+			else
+				cout << "\n[ ] - the list is empty.\n" << endl;
 		}
 		else if (option == 'q' || option == 'Q')
 		{
